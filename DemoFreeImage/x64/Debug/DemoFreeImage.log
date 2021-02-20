@@ -1,0 +1,9 @@
+﻿  main.cpp
+E:\Users\MISSI\Downloads\Raytracing\DemoFreeImage\DemoFreeImage\DemoFreeImage\main.cpp(14,19): warning C4267: '=' : conversion de 'size_t' en 'BYTE', perte possible de données
+E:\Users\MISSI\Downloads\Raytracing\DemoFreeImage\DemoFreeImage\DemoFreeImage\main.cpp(18,21): warning C4267: '=' : conversion de 'size_t' en 'BYTE', perte possible de données
+E:\Users\MISSI\Downloads\Raytracing\DemoFreeImage\DemoFreeImage\DemoFreeImage\main.cpp(20,47): warning C4267: 'argument' : conversion de 'size_t' en 'unsigned int', perte possible de données
+main.obj : error LNK2019: symbole externe non résolu __imp_FreeImage_Allocate référencé dans la fonction main
+main.obj : error LNK2019: symbole externe non résolu __imp_FreeImage_Save référencé dans la fonction main
+main.obj : error LNK2019: symbole externe non résolu __imp_FreeImage_SetPixelColor référencé dans la fonction main
+..\FreeImage\FreeImage.lib : warning LNK4272: type d'ordinateur bibliothèque 'x86' en conflit avec le type d'ordinateur cible 'x64'
+E:\Users\MISSI\Downloads\Raytracing\DemoFreeImage\DemoFreeImage\x64\Debug\DemoFreeImage.exe : fatal error LNK1120: 3 externes non résolus
