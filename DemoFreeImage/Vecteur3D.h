@@ -2,9 +2,11 @@
 #include "math.h"
 #include <iostream>
 
+#include "Vecteur.h"
+#include "Vecteur4D.h"
 
 
-class Vecteur3D
+class Vecteur3D : Vecteur
 {
 public:
 	Vecteur3D(); //constructeur
@@ -22,9 +24,9 @@ public:
 	}
 
 public:
-	float _x;
-	float _y;
-	float _z; //déclaration des composantes 3D x,y,z
+	float x;
+	float y;
+	float z; //déclaration des composantes 3D x,y,z
 
 	//Constructeur de recopie
 	Vecteur3D(const Vecteur3D& v);
@@ -32,8 +34,14 @@ public:
 	//L'affichage d'un vecteur
 	void afficher();
 
+	Vecteur somme(Vecteur4D autre) const override;
+	float produit(const Vecteur& autre) const override;
+	Vecteur soustraction(const Vecteur& autre) const override;
+	Vecteur produit_vectoriel(const Vecteur& autre) const override;
+	
+	Vecteur multiplicationScalaire(float nombre_flottant) const override;
 	//La somme de deux vecteurs
-	Vecteur3D somme(const Vecteur3D& v);
+	Vecteur3D somme(const Vecteur3D& v) const;
 
 	Vecteur3D soustraction(const Vecteur3D& v);
 
@@ -58,10 +66,3 @@ public:
 	Vecteur3D sub(float f);
 
 };
-
-
-Vecteur3D operator+(Vecteur3D vect1, Vecteur3D vect2);
-Vecteur3D operator-(Vecteur3D vect1, Vecteur3D vect2);
-Vecteur3D operator-(Vecteur3D vect1);
-float operator*(Vecteur3D vect1, Vecteur3D vect2);
-	

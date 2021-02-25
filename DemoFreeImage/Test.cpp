@@ -2,17 +2,26 @@
 #include "Scene.h"
 #include "Camera.h"
 #include "Sphere.h"
+#include "assert.h"
 
 int main(int argc, char** argv)
 {
+
+	
+	FreeImage_Initialise();
+	
 	Scene scene = Scene::Instance();
-	scene.ajoutObjet(new Camera());
-	scene.ajoutObjet(new Sphere());
+	Camera* camera = new Camera();
+	scene.ajoutObjet(camera);
+	Sphere* sphere = new Sphere();
+	scene.ajoutObjet(sphere);
+	Lumiere* lumiere = new Lumiere(Vecteur4D(1,0,1,0));
+	scene.ajoutObjet(lumiere);
 
 	scene.listeDesObjets();
-
+	scene.raytrace();
 	//test fonctions vecteur
-	Vecteur3D v1(1, 2, 3);
+	/*Vecteur4D v1(1, 2, 3);
 	std::cout << "Vecteur V1";
 	v1.afficher();
 	Vecteur3D v2(3, 2, 1);
@@ -37,7 +46,7 @@ int main(int argc, char** argv)
 	v1.normalise(v2).afficher();
 	std::cout << std::endl;
 	std::cout << "Produit vectoriel" << std::endl;
-	v1.cross(v1).afficher();
+	v1.cross(v1).afficher();*/
 	
 	return EXIT_SUCCESS;
 }

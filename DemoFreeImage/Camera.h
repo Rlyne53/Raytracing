@@ -5,12 +5,21 @@ class Camera : public ObjetGenerique
 {
 public:
 	Camera() //constructeur
+	;
+
+
+	explicit Camera(const Vecteur4D& position)
+		: ObjetGenerique(position)
 	{
-		ObjetGenerique::type = "Camera";
 	}
+
+	bool intersect(Ray ray, Hit& hit);
 	virtual ~Camera(); //déstructeur
-private:
-	//ChampDeVision _cdv;
+
+	Ray rayon(float i, float j);
+public:
+	int resolutionLargeur = 60;
+	int resolutionLongueur= 60;
 
 };
 

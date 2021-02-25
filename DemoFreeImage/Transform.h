@@ -4,12 +4,12 @@
 class Transform
 {
 public:
-    Transform(Vecteur3D position = Vecteur3D::zero(), Vecteur3D rotation = Vecteur3D::zero(), Vecteur3D scale = Vecteur3D::un()); //constructeur d'initialisation
+    Transform(Vecteur4D position = Vecteur4D(), Vecteur4D rotation = Vecteur4D(), Vecteur4D scale = Vecteur4D::un()); //constructeur d'initialisation
     virtual ~Transform(); //destructeur
 public:
-    Vecteur3D position;
-    Vecteur3D rotation;
-    Vecteur3D scale;
+    Vecteur4D position;
+    Vecteur4D rotation;
+    Vecteur4D scale;
 };
 
 
